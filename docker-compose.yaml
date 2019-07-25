@@ -1,0 +1,39 @@
+version: "2"
+networks:
+  api_net: {}
+services:
+  vcapi:
+    image: swaggerapi/swagger-ui:latest
+    container_name: vcapi
+    environment:
+       SWAGGER_JSON: /data/apispec-vc.yaml
+    volumes:
+      - ./:/data/
+    ports:
+      - 8080:8080  
+    networks: 
+      - api_net
+  wbrtaapi:
+    image: swaggerapi/swagger-ui:latest
+    container_name: wbrtaapi
+    environment:
+       SWAGGER_JSON: /data/apispec-rta.yaml
+    volumes:
+      - ./:/data/
+    ports:
+      - 8081:8080  
+    networks: 
+      - api_net
+  jdapi:
+    image: swaggerapi/swagger-ui:latest
+    container_name: jdapi
+    environment:
+       SWAGGER_JSON: /data/apispec-jd.yaml
+    volumes:
+      - ./:/data/
+    ports:
+      - 8082:8080  
+    networks: 
+      - api_net      
+
+    
