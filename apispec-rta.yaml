@@ -2,13 +2,13 @@ swagger: "2.0"
 info:
   description: "REST API Specification for Hyperleder Fabric REST API"
   version: "1.0.0"
-  title: "Fabric Rest API"
+  title: "WB Route Transport Authority Fabric Rest API"
   contact:
     email: "suddutt1@in.ibm.com"
   license:
     name: "Apache 2.0"
     url: "http://www.apache.org/licenses/LICENSE-2.0.html"
-host: "0.0.0.0:9090"
+host: "0.0.0.0:9091"
 basePath: "/api"
 tags:
 - name: "trxn"

@@ -2,6 +2,19 @@
 
 ### Setup 
 
+1. Add following /etc/hosts entries 
+
+```sh
+sudo nano /etc/hosts
+# Append the following line in the /etc/hosts. Save it 
+127.0.0.1	ca.vectorcars.com
+127.0.0.1	ca.wbrta.gov.in
+127.0.0.1	ca.jamesdistributers.net
+
+```
+
+2. Download the API setup 
+
 ```sh
 
 cd $HOME
@@ -16,10 +29,9 @@ chmod +x *.sh
 
 ```sh
 cd $HOME/projects/cartrack/api
-
+./launchservices.sh
 docker-compose up -d # this will take longer duration for the first time
 
-./launchservices.sh
 ```
 
 ### Open a browser and open the following urls
@@ -27,3 +39,14 @@ docker-compose up -d # this will take longer duration for the first time
 1. http://localhost:8080 ( API for Car Manufacturer)
 2. http://localhost:8081 ( API for WB RTA)
 3. http://localhost:8082 ( API for Car Delaer)
+
+### To stop the services
+
+```sh
+cd $HOME/projects/cartrack/api
+
+./stopServices.sh
+
+docker-compose down
+
+```

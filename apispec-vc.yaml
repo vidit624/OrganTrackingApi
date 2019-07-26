@@ -2,7 +2,7 @@ swagger: "2.0"
 info:
   description: "REST API Specification for Hyperleder Fabric REST API"
   version: "1.0.0"
-  title: "Fabric Rest API"
+  title: "Vector Cars ( Car maker) Fabric Rest API"
   contact:
     email: "suddutt1@in.ibm.com"
   license:
