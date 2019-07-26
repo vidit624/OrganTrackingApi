@@ -2,9 +2,9 @@ version: "2"
 networks:
   api_net: {}
 services:
-  vcapi:
+  vcarapi:
     image: swaggerapi/swagger-ui:latest
-    container_name: vcapi
+    container_name: vcarapi
     environment:
        SWAGGER_JSON: /data/apispec-vc.yaml
     volumes:

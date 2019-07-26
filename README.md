@@ -7,9 +7,14 @@
 ```sh
 sudo nano /etc/hosts
 # Append the following line in the /etc/hosts. Save it 
-127.0.0.1	ca.vectorcars.com
-127.0.0.1	ca.wbrta.gov.in
-127.0.0.1	ca.jamesdistributers.net
+127.0.0.1       ca.vectorcars.com
+127.0.0.1       ca.wbrta.gov.in
+127.0.0.1       ca.jamesdistributers.net
+127.0.0.1       peer0.vectorcars.com
+127.0.0.1       peer0.wbrta.gov.in
+127.0.0.1       peer0.jamesdistributers.net
+127.0.0.1       orderer.carscm.net
+
 
 ```
 
