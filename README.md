@@ -55,3 +55,109 @@ cd $HOME/projects/cartrack/api
 docker-compose down
 
 ```
+
+### Trxnsaction templates 
+Use  the following transaction templates to perfrom the specific transactions 
+
+### Register a user
+```sh
+{
+  "userId": "<user id of your choice>",
+  "secret": "<some password>",
+  "role": "<role>"
+}
+```
+### Register an organization 
+```sh
+{
+  "channelID": "cartrackingchannel",
+  "ccId": "ctrack",
+  "userId": "<user id registered to the organization>",
+  "funcName": "registerOrg",
+  "args": [
+     "CARMAKER|DEALER|RTA"
+  ],
+  "peers": [
+    "peer0.vectorcars.com|peer0.wbrta.gov.in|peer0.jamesdistributers.net"
+  ]
+}
+```
+### Create car details in the ledger ( Can only be done by an organization having CARMAKER registration)
+```sh
+
+{
+	"channelID": "cartrackingchannel",
+	"ccId": "ctrack",
+	"userId": "<user id registered to the organization>",
+	"funcName": "createCarDetails",
+	"args": [{
+			"chasisNumber": "100001",
+			"makeYear": "2019",
+			"model": "MARUTI-ALTO",
+			"color": "RED"
+		}
+	],
+	"peers": [
+		"peer0.vectorcars.com"
+	]
+}
+
+```
+
+### Moodify car details in the ledger
+
+```sh
+{
+	"channelID": "cartrackingchannel",
+	"ccId": "ctrack",
+	"userId": "<user id registered to the organization>",
+	"funcName": "modifyCarDetails",
+	"args": [{
+			"chasisNumber": "100001",
+			"dealer":"James Distributers",
+			"status":"TRANSFERRED_TO_DEALER"
+		}
+	],
+	"peers": [
+		"peer0.vectorcars.com"
+	]
+}
+
+```
+
+### View car history 
+```sh
+
+{
+	"channelID": "cartrackingchannel",
+	"ccId": "ctrack",
+	"userId": "suddutt3",
+	"funcName": "queryHistory",
+	"args": [ "100001"
+	],
+	"peers": [
+		"peer0.vectorcars.com|peer0.wbrta.gov.in|peer0.jamesdistributers.net"
+	]
+}
+```
+
+
+### Full car model 
+
+```sh
+{
+	"objType":"", 		# System generated
+	"chasisNumber":"",  # Can not be changed and it is the primary key in ledger
+	"manufacturer":"",  # System generated
+	"makeYear":"",      # Can not be updated 
+	"model":"",         # Can not be updated
+	"color":"",         # Can not be updated
+	"licNumber":"",		# License plate number
+	"status":"",
+	"dealer":"",
+	"owner":"", 		
+	"ts":"", 			# System generated
+	"trxnId":"", 		# System generated
+	"updBy":"", 		# System generated
+}
+```
