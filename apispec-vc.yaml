@@ -2,13 +2,13 @@ swagger: "2.0"
 info:
   description: "REST API Specification for Hyperleder Fabric REST API"
   version: "1.0.0"
-  title: "Vector Cars ( Car maker) Fabric Rest API"
+  title: "Hospital A Fabric Rest API"
   contact:
-    email: "suddutt1@in.ibm.com"
+    email: "hospitala@xyz.com"
   license:
     name: "Apache 2.0"
     url: "http://www.apache.org/licenses/LICENSE-2.0.html"
-host: "0.0.0.0:9090"
+host: "localhost:9090"
 basePath: "/api"
 tags:
 - name: "trxn"
@@ -69,7 +69,7 @@ paths:
     post:
       tags:
       - "usermgmt"
-      summary: "Entoll blockchain user in CA"
+      summary: "Enroll blockchain user in CA"
       description: ""
       operationId: "enroll"
       consumes:
